@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-07T08:54:17.505Z</updated>
+  <updated>2019-11-09T07:03:19.907Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux下权限的修改设置</title>
+    <link href="http://yoursite.com/2019/11/08/linux-permission/"/>
+    <id>http://yoursite.com/2019/11/08/linux-permission/</id>
+    <published>2019-11-08T08:46:26.000Z</published>
+    <updated>2019-11-09T07:03:19.907Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a><strong>修改文件权限</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod -R 777 files</span><br></pre></td></tr></table></figure><h3 id="1-先来讲讲数字"><a href="#1-先来讲讲数字" class="headerlink" title="1.先来讲讲数字"></a><strong>1.先来讲讲数字</strong></h3><p>777代表的是三个级别的身份<br>owner/group/others</p><p>对于每个级别都有三个不同的权限</p><ul><li>r 读权限read  4，100</li><li>w 写权限write 2，010</li><li>x 操作权限execute 1，  001</li></ul><p>如果rwx都可以，就对三个数进行相加，等于7。这个就相当于3bit的位来表示单个级别身份的权限，某个位上的1表示有这个位代表的权限，0表示没有</p><h3 id="2-接着讲讲-R"><a href="#2-接着讲讲-R" class="headerlink" title="2.接着讲讲 R"></a><strong>2.接着讲讲 R</strong></h3><p>对于R的话其实表示：<br><strong>对目前目录下的所有文件与子目录进行相同的权限变更(即以递回的方式逐个变更)</strong></p><h3 id="3-其他"><a href="#3-其他" class="headerlink" title="3.其他"></a><strong>3.其他</strong></h3><p>当然除了 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R XXX file.txt</span><br></pre></td></tr></table></figure><p>也有其他的方式，主要是依据owner/group/others三个用户来的。  </p><p>栗子：设置文件拥有者权限为可写，组合为可读，其他用户删去可执行权限</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+w,g+r,o-x files.txt</span><br></pre></td></tr></table></figure><ul><li>own对应 u</li><li>group对应 g</li><li>other对应 o</li><li>所有对应 a</li></ul><hr><p>此处自己只是列举了自己常用的，部分深入的细节没有完全解释清楚，网上也有大片的参考。</p><p>详细的可以百度chmod</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;修改文件权限&quot;&gt;&lt;a href=&quot;#修改文件权限&quot; class=&quot;headerlink&quot; title=&quot;修改文件权限&quot;&gt;&lt;/a&gt;&lt;strong&gt;修改文件权限&lt;/strong&gt;&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;t
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="命令" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初来乍到</title>
+    <link href="http://yoursite.com/2019/11/08/myblog-creation/"/>
+    <id>http://yoursite.com/2019/11/08/myblog-creation/</id>
+    <published>2019-11-08T05:54:13.000Z</published>
+    <updated>2019-11-08T05:58:06.768Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一次建站，若有问题欢迎大家指正。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;第一次建站，若有问题欢迎大家指正。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+      <category term="HEXO" scheme="http://yoursite.com/tags/HEXO/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

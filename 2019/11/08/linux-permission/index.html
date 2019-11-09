@@ -14,22 +14,22 @@
     
     
     
-    <title>Hello World | 禹哥小站</title>
+    <title>Linux下权限的修改设置 | 禹哥小站</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="test1,test2">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="test1,test2">
+    <meta name="keywords" content="Linux,命令">
+    <meta name="description" content="修改文件权限1$ chmod -R 777 files 1.先来讲讲数字777代表的是三个级别的身份owner&#x2F;group&#x2F;others 对于每个级别都有三个不同的权限  r 读权限read  4，100 w 写权限write 2，010 x 操作权限execute 1，  001  如果rwx都可以，就对三个数进行相加，等于7。这个就相当于3bit的位来表示单个级别身份的权限，某个位上的1表示有">
+<meta name="keywords" content="Linux,命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;07&#x2F;hello-world&#x2F;index.html">
+<meta property="og:title" content="Linux下权限的修改设置">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;linux-permission&#x2F;index.html">
 <meta property="og:site_name" content="禹哥小站">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="修改文件权限1$ chmod -R 777 files 1.先来讲讲数字777代表的是三个级别的身份owner&#x2F;group&#x2F;others 对于每个级别都有三个不同的权限  r 读权限read  4，100 w 写权限write 2，010 x 操作权限execute 1，  001  如果rwx都可以，就对三个数进行相加，等于7。这个就相当于3bit的位来表示单个级别身份的权限，某个位上的1表示有">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-07T08:54:17.505Z">
+<meta property="og:updated_time" content="2019-11-09T07:03:19.907Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="禹哥小站" href="/atom.xml">
@@ -118,7 +118,7 @@
         <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hello World</div>
+        <div class="flex-col header-title ellipsis">Linux下权限的修改设置</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back" target="">
@@ -140,15 +140,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">Linux下权限的修改设置</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-11-07T02:35:18.647Z" itemprop="datePublished" class="page-time">
-  2019-11-07
+                <time datetime="2019-11-08T08:46:26.000Z" itemprop="datePublished" class="page-time">
+  2019-11-08
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/hello/">hello</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
 
             
         </h5>
@@ -165,21 +165,21 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改文件权限"><span class="post-toc-number">1.</span> <span class="post-toc-text">修改文件权限</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-先来讲讲数字"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.先来讲讲数字</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-接着讲讲-R"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.接着讲讲 R</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-其他"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3.其他</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-hello-world"
+<article id="post-linux-permission"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Hello World</h1>
+        <h1 class="post-card-title">Linux下权限的修改设置</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-11-07 10:35:18" datetime="2019-11-07T02:35:18.647Z"  itemprop="datePublished">2019-11-07</time>
+            <time class="post-time" title="2019-11-08 16:46:26" datetime="2019-11-08T08:46:26.000Z"  itemprop="datePublished">2019-11-08</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/hello/">hello</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
 
 
 
@@ -187,19 +187,30 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h2 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a><strong>修改文件权限</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod -R 777 files</span><br></pre></td></tr></table></figure>
+<h3 id="1-先来讲讲数字"><a href="#1-先来讲讲数字" class="headerlink" title="1.先来讲讲数字"></a><strong>1.先来讲讲数字</strong></h3><p>777代表的是三个级别的身份<br>owner/group/others</p>
+<p>对于每个级别都有三个不同的权限</p>
+<ul>
+<li>r 读权限read  4，100</li>
+<li>w 写权限write 2，010</li>
+<li>x 操作权限execute 1，  001</li>
+</ul>
+<p>如果rwx都可以，就对三个数进行相加，等于7。这个就相当于3bit的位来表示单个级别身份的权限，某个位上的1表示有这个位代表的权限，0表示没有</p>
+<h3 id="2-接着讲讲-R"><a href="#2-接着讲讲-R" class="headerlink" title="2.接着讲讲 R"></a><strong>2.接着讲讲 R</strong></h3><p>对于R的话其实表示：<br><strong>对目前目录下的所有文件与子目录进行相同的权限变更(即以递回的方式逐个变更)</strong></p>
+<h3 id="3-其他"><a href="#3-其他" class="headerlink" title="3.其他"></a><strong>3.其他</strong></h3><p>当然除了 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R XXX file.txt</span><br></pre></td></tr></table></figure>
+<p>也有其他的方式，主要是依据owner/group/others三个用户来的。  </p>
+<p>栗子：设置文件拥有者权限为可写，组合为可读，其他用户删去可执行权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+w,g+r,o-x files.txt</span><br></pre></td></tr></table></figure>
+<ul>
+<li>own对应 u</li>
+<li>group对应 g</li>
+<li>other对应 o</li>
+<li>所有对应 a</li>
+</ul>
+<hr>
+<p>此处自己只是列举了自己常用的，部分深入的细节没有完全解释清楚，网上也有大片的参考。</p>
+<p>详细的可以百度chmod</p>
 
         </div>
 
@@ -208,7 +219,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-07T08:54:17.505Z" itemprop="dateUpdated">2019-11-07 16:54:17</time>
+    Last updated: <time datetime="2019-11-09T07:03:19.907Z" itemprop="dateUpdated">2019-11-09 15:03:19</time>
 </span><br>
 
 
@@ -228,7 +239,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test1/" rel="tag">test1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test2/" rel="tag">test2</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4/" rel="tag">命令</a></li></ul>
 
 
             
@@ -238,7 +249,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/07/hello-world/&title=《Hello World》 — 禹哥小站&pic=http://yoursite.com/img/yuge.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/08/linux-permission/&title=《Linux下权限的修改设置》 — 禹哥小站&pic=http://yoursite.com/img/yuge.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -248,22 +259,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/07/hello-world/&title=《Hello World》 — 禹哥小站&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/08/linux-permission/&title=《Linux下权限的修改设置》 — 禹哥小站&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/07/hello-world/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/08/linux-permission/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — 禹哥小站&url=http://yoursite.com/2019/11/07/hello-world/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux下权限的修改设置》 — 禹哥小站&url=http://yoursite.com/2019/11/08/linux-permission/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/07/hello-world/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/08/linux-permission/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -283,16 +294,16 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/11/08/myblog-creation/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/08/myblog-creation/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">初来乍到</h4>
       </a>
     </div>
-  
-
   
 </nav>
 
@@ -355,7 +366,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/07/hello-world/&title=《Hello World》 — 禹哥小站&pic=http://yoursite.com/img/yuge.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/08/linux-permission/&title=《Linux下权限的修改设置》 — 禹哥小站&pic=http://yoursite.com/img/yuge.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -365,22 +376,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/07/hello-world/&title=《Hello World》 — 禹哥小站&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/08/linux-permission/&title=《Linux下权限的修改设置》 — 禹哥小站&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/07/hello-world/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/08/linux-permission/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — 禹哥小站&url=http://yoursite.com/2019/11/07/hello-world/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux下权限的修改设置》 — 禹哥小站&url=http://yoursite.com/2019/11/08/linux-permission/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/07/hello-world/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/08/linux-permission/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -391,7 +402,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/11/07/hello-world/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/11/08/linux-permission/" alt="微信分享二维码">
 </div>
 
 
