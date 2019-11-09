@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-09T07:03:19.907Z</updated>
+  <updated>2019-11-09T08:58:45.629Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode-最大回文子串</title>
+    <link href="http://yoursite.com/2019/11/09/leetcode-%E6%9C%80%E5%A4%A7%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/"/>
+    <id>http://yoursite.com/2019/11/09/leetcode-最大回文子串/</id>
+    <published>2019-11-09T08:07:50.000Z</published>
+    <updated>2019-11-09T08:58:45.629Z</updated>
+    
+    <content type="html"><![CDATA[<p>暴力法不多做详解</p><h1 id="1-中心扩展法"><a href="#1-中心扩展法" class="headerlink" title="1.中心扩展法"></a>1.中心扩展法</h1><p>此方法<strong>主要思想</strong>:<br>通过查找以字符串中以某个字符为中心的回文子串是有多长，来得到每个回文子串的大小。对于这个子串，我们就从中心出发，向两边扩展，如果扩展后还是回文串，那么继续扩展，直到不是回文串，我们就可以将子串长度记录下来了。对于向两边扩展，我们可以通过一个下标来表示（也可以用指针），p1和p2。</p><p>现在有个问题，aabbaa和aabaa都是回文串，所以在打代码的时候就要稍稍做个处理。  </p><p>两种情况  </p><ul><li>回文子串是奇数个，那么中心点就是一个字符，所以初始状态，p1和p2是指向同一个字符的。</li><li>回文子串是偶数个，那么中心就是两个字符，所以初始状态，p1和p2是指向两个相同字符的。</li></ul><p>对于两种情况的处理打代码稍稍注意下就好了，问题不大。<br>（这个方法暂无代码……）</p><h1 id="2-动态规划"><a href="#2-动态规划" class="headerlink" title="2.动态规划"></a>2.动态规划</h1><p>主要思想：<br>对于i到j是否是回文子串，我们只需要判断两个问题：</p><ul><li>i位置和j位置两个字符是否相同</li><li>如果相同了就判断i+1和j-1是否是个回文窜</li></ul><p>有了这两点就没啥问题了</p><p>公式如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j] = dp[i+1][j-1]</span><br></pre></td></tr></table></figure><p>这里的dp[i][j]存放的是boolean类型的，下面的dp存的是回文串长度</p><p>因为i一定会比j小，所以在二维数组上的操作要多多注意</p><p>一段比较原始的代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.length() &lt;=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        <span class="keyword">int</span> dp[][] = <span class="keyword">new</span> <span class="keyword">int</span>[len][len];</span><br><span class="line">        <span class="comment">//初始化dp数组，主要是a和aa这种先准备好</span></span><br><span class="line">        <span class="comment">//dp数组每个格子存放当前i到j的回文子串长度</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; len;i++)&#123;</span><br><span class="line">            dp[i][i] = <span class="number">1</span>; <span class="comment">//i到i（单个字符）就是个回文串</span></span><br><span class="line">            <span class="keyword">if</span> (i != len-<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="comment">//aa也是个回文串</span></span><br><span class="line">                <span class="keyword">if</span> (s.charAt(i) == s.charAt(i+<span class="number">1</span>))&#123;</span><br><span class="line">                    dp[i][i+<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//这个循环和是纵列在外，横行在内</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; len; i ++)&#123;</span><br><span class="line">            <span class="comment">//这里是j到i</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; i-<span class="number">1</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (s.charAt(j) == s.charAt(i))&#123;</span><br><span class="line">                    <span class="keyword">if</span> (dp[j+<span class="number">1</span>][i-<span class="number">1</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">                        dp[j][i] = dp[j+<span class="number">1</span>][i-<span class="number">1</span>];</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        dp[j][i] = dp[j+<span class="number">1</span>][i-<span class="number">1</span>] +<span class="number">2</span> ;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//把最大子串给截出来</span></span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxlen = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">0</span>;i&lt; len;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i;j &lt; len;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (dp[i][j] &gt;  maxlen)&#123;</span><br><span class="line">                    maxlen = dp[i][j];</span><br><span class="line">                    left = i;</span><br><span class="line">                    right = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substring(left,right+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h1 id="3-Manacher算法"><a href="#3-Manacher算法" class="headerlink" title="3.Manacher算法"></a>3.Manacher算法</h1><p>（待更）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;暴力法不多做详解&lt;/p&gt;
+&lt;h1 id=&quot;1-中心扩展法&quot;&gt;&lt;a href=&quot;#1-中心扩展法&quot; class=&quot;headerlink&quot; title=&quot;1.中心扩展法&quot;&gt;&lt;/a&gt;1.中心扩展法&lt;/h1&gt;&lt;p&gt;此方法&lt;strong&gt;主要思想&lt;/strong&gt;:&lt;br&gt;通过查找以
+      
+    
+    </summary>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux下权限的修改设置</title>
@@ -49,7 +78,7 @@
     <link href="http://yoursite.com/2019/11/08/myblog-creation/"/>
     <id>http://yoursite.com/2019/11/08/myblog-creation/</id>
     <published>2019-11-08T05:54:13.000Z</published>
-    <updated>2019-11-08T05:58:06.768Z</updated>
+    <updated>2019-11-09T09:02:50.526Z</updated>
     
     <content type="html"><![CDATA[<p>第一次建站，若有问题欢迎大家指正。</p>]]></content>
     
@@ -64,36 +93,10 @@
     </summary>
     
     
+      <category term="Helloworld" scheme="http://yoursite.com/categories/Helloworld/"/>
+    
     
       <category term="HEXO" scheme="http://yoursite.com/tags/HEXO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2019/11/07/hello-world/"/>
-    <id>http://yoursite.com/2019/11/07/hello-world/</id>
-    <published>2019-11-07T02:35:18.647Z</published>
-    <updated>2019-11-07T08:54:17.505Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-      <category term="hello" scheme="http://yoursite.com/categories/hello/"/>
-    
-    
-      <category term="test1" scheme="http://yoursite.com/tags/test1/"/>
-    
-      <category term="test2" scheme="http://yoursite.com/tags/test2/"/>
     
   </entry>
   
