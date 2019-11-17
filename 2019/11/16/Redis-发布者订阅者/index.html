@@ -29,8 +29,13 @@
 <meta property="og:site_name" content="禹哥小站">
 <meta property="og:description" content="引言本文参考了https:&#x2F;&#x2F;blog.csdn.net&#x2F;clh604&#x2F;article&#x2F;details&#x2F;19754939https:&#x2F;&#x2F;blog.csdn.net&#x2F;gududedabai&#x2F;article&#x2F;details&#x2F;80326129 简介 为了解耦发布者(publisher)和订阅者(subscriber)之间的关系，Redis 使用了 channel (频道)作为两者的中介 —— 发布者将信">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-16T13:37:47.590Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;redis-pubsub&#x2F;aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzAzMjky.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;redis-pubsub&#x2F;aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzE5NDc5.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;subscribe1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;publish1.png">
+<meta property="og:updated_time" content="2019-11-17T06:29:59.182Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;redis-pubsub&#x2F;aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzAzMjky.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="禹哥小站" href="/atom.xml">
     
@@ -165,7 +170,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#引言"><span class="post-toc-number">1.</span> <span class="post-toc-text">引言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简介"><span class="post-toc-number">2.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#主要命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">主要命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PUBLISH"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">PUBLISH</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#样例"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">样例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现（源码）"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">实现（源码）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SUBSCRIBE"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">SUBSCRIBE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#样例-1"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">样例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现（源码）-1"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">实现（源码）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PSUBSCRIBE"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">PSUBSCRIBE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#样例-2"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">样例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现（源码）-2"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">实现（源码）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UNSUBSCRIBE"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">UNSUBSCRIBE</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">4.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TIPS"><span class="post-toc-number">5.</span> <span class="post-toc-text">TIPS</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#引言"><span class="post-toc-number">1.</span> <span class="post-toc-text">引言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简介"><span class="post-toc-number">2.</span> <span class="post-toc-text">简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现介绍"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">实现介绍</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#主要命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">主要命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#样例"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">样例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PUBLISH"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">PUBLISH</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现（源码）"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">实现（源码）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SUBSCRIBE"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">SUBSCRIBE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现（源码）-1"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">实现（源码）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PSUBSCRIBE"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">PSUBSCRIBE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现（源码）-2"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">实现（源码）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UNSUBSCRIBE"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">UNSUBSCRIBE</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TIPS"><span class="post-toc-number">4.</span> <span class="post-toc-text">TIPS</span></a></li></ol>
         </nav>
     </aside>
 
@@ -195,11 +200,48 @@
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
 <p>为了解耦发布者(publisher)和订阅者(subscriber)之间的关系，Redis 使用了 channel (频道)作为两者的中介 —— 发布者将信息直接发布给 channel ，而 channel 负责将信息发送给适当的订阅者，发布者和订阅者之间没有相互关系，也不知道对方的存在：</p>
 </blockquote>
-<h1 id="主要命令"><a href="#主要命令" class="headerlink" title="主要命令"></a>主要命令</h1><p>这里主要想写样例：</p>
+<h2 id="实现介绍"><a href="#实现介绍" class="headerlink" title="实现介绍"></a>实现介绍</h2><p>订阅者订阅频道</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://q0p4k1fq1.bkt.clouddn.com/image/myblog/redis-pubsub/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzAzMjky.jpg" alt="订阅" title="">
+                </div>
+                <div class="image-caption">订阅</div>
+            </figure>
+
+<p>发布者在相应频道发信息就好，完全不需要管谁订阅了，自动会发送到每个订阅者手中</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://q0p4k1fq1.bkt.clouddn.com/image/myblog/redis-pubsub/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzE5NDc5.jpg" alt="发布" title="">
+                </div>
+                <div class="image-caption">发布</div>
+            </figure>
+
+
+
+<h1 id="主要命令"><a href="#主要命令" class="headerlink" title="主要命令"></a>主要命令</h1><h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><p>开启一个客户端先进行订阅。然后在另一个客户端在相应频道发布消息，两个客户端内容如下图。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://q0p4k1fq1.bkt.clouddn.com/image/myblog/subscribe1.png" alt="订阅" title="">
+                </div>
+                <div class="image-caption">订阅</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://q0p4k1fq1.bkt.clouddn.com/image/myblog/publish1.png" alt="发布消息" title="">
+                </div>
+                <div class="image-caption">发布消息</div>
+            </figure>
+
+
 <h2 id="PUBLISH"><a href="#PUBLISH" class="headerlink" title="PUBLISH"></a>PUBLISH</h2><blockquote>
 <p>发布消息</p>
 </blockquote>
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h3 id="实现（源码）"><a href="#实现（源码）" class="headerlink" title="实现（源码）"></a>实现（源码）</h3><p>PUBLISH的命令主要有这两个步骤</p>
+<h3 id="实现（源码）"><a href="#实现（源码）" class="headerlink" title="实现（源码）"></a>实现（源码）</h3><p>PUBLISH的命令主要有这两个步骤</p>
 <ul>
 <li><p>使用给定的频道作为键，在 redisServer.pubsub_channels 字典中查找记录了订阅这个频道的所有客户端的链表，遍历这个链表，将消息发布给所有订阅者。</p>
 </li>
@@ -212,7 +254,7 @@
 <h2 id="SUBSCRIBE"><a href="#SUBSCRIBE" class="headerlink" title="SUBSCRIBE"></a>SUBSCRIBE</h2><blockquote>
 <p>订阅频道</p>
 </blockquote>
-<h3 id="样例-1"><a href="#样例-1" class="headerlink" title="样例"></a>样例</h3><h3 id="实现（源码）-1"><a href="#实现（源码）-1" class="headerlink" title="实现（源码）"></a>实现（源码）</h3><p><strong>数据结构</strong></p>
+<h3 id="实现（源码）-1"><a href="#实现（源码）-1" class="headerlink" title="实现（源码）"></a>实现（源码）</h3><p><strong>数据结构</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">redisServer</span> &#123;</span> </span><br><span class="line">　　<span class="comment">// 省略 ... </span></span><br><span class="line">　　dict *pubsub_channels; </span><br><span class="line"><span class="comment">// Map channels to list of subscribed clients </span></span><br><span class="line">　　<span class="comment">// 省略 ... </span></span><br><span class="line">　　&#125;;</span><br></pre></td></tr></table></figure>
 <p>pubsub_channels是个<strong>字典</strong>，字典的<strong>键</strong>就是一个个 <strong>channel</strong> ，而字典的<strong>值</strong>则是一个<strong>链表</strong>，链表中保存了所有订阅这个 channel 的客户端。(haspmap之类)，所以要订阅就现需要在里面加上自己</p>
 <p>函数 pubsubSubscribeChannel 是 SUBSCRIBE 命令的底层实现，它完成了将客户端添加到订阅链表中的工作：</p>
@@ -225,7 +267,7 @@
 <h2 id="PSUBSCRIBE"><a href="#PSUBSCRIBE" class="headerlink" title="PSUBSCRIBE"></a>PSUBSCRIBE</h2><blockquote>
 <p>订阅模式（多个频道）</p>
 </blockquote>
-<h3 id="样例-2"><a href="#样例-2" class="headerlink" title="样例"></a>样例</h3><h3 id="实现（源码）-2"><a href="#实现（源码）-2" class="headerlink" title="实现（源码）"></a>实现（源码）</h3><p><strong>数据结构</strong></p>
+<h3 id="实现（源码）-2"><a href="#实现（源码）-2" class="headerlink" title="实现（源码）"></a>实现（源码）</h3><p><strong>数据结构</strong></p>
 <p>和 redisServer.pubsub_channels 属性类似， redisServer.pubsub_patterns 属性用于保存所有被订阅的模式，和 pubsub_channels 不同的是， pubsub_patterns 是一个链表(而不是字典)：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">redisServer</span> &#123;</span> </span><br><span class="line">　　<span class="comment">// ...... </span></span><br><span class="line">　　<span class="built_in">list</span> *pubsub_patterns; </span><br><span class="line">    <span class="comment">// A list of pubsub_patterns </span></span><br><span class="line">　　<span class="comment">// ...... </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>pubsubSubscribePattern 是 PSUBSCRIBE 的底层实现，它将客户端和所订阅的模式添加到redisServer.pubsub_patterns 当中：</p>
@@ -234,7 +276,7 @@
 <h2 id="UNSUBSCRIBE"><a href="#UNSUBSCRIBE" class="headerlink" title="UNSUBSCRIBE"></a>UNSUBSCRIBE</h2><blockquote>
 <p>不订阅</p>
 </blockquote>
-<h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><p>而对于</p>
+<p>这个就比较随意啦，就不细讲。</p>
 <h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1><p>个人一些理解上卡的关键点：  </p>
 <p><strong>1.在没有一个channel的情况下是通过怎样的方式创建channel的呢？</strong>  </p>
 <blockquote>
@@ -256,7 +298,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-16T13:37:47.590Z" itemprop="dateUpdated">2019-11-16 21:37:47</time>
+    Last updated: <time datetime="2019-11-17T06:29:59.182Z" itemprop="dateUpdated">2019-11-17 14:29:59</time>
 </span><br>
 
 
@@ -331,7 +373,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/11/17/Spring-Bean/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Spring-spring的bean</h4>
+      </a>
+    </div>
   
 
   
