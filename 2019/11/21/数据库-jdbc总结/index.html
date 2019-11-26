@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;database-jdbc&#x2F;jdbc.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;database-jdbc&#x2F;jdbc2.png">
-<meta property="og:updated_time" content="2019-11-21T14:13:41.472Z">
+<meta property="og:updated_time" content="2019-11-26T11:41:35.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;database-jdbc&#x2F;jdbc.png">
     
@@ -168,7 +168,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#引言"><span class="post-toc-number">1.</span> <span class="post-toc-text">引言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#加载驱动"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">加载驱动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#建立连接"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">建立连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用Driver直接建立连接"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">使用Driver直接建立连接</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#执行SQL语句"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">执行SQL语句</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建Statement或者PreparedStatement接口"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">创建Statement或者PreparedStatement接口</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#引言"><span class="post-toc-number">1.</span> <span class="post-toc-text">引言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#加载驱动"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">加载驱动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#建立连接"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">建立连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用Driver直接建立连接"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">使用Driver直接建立连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DriverManager建立连接"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">DriverManager建立连接</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#执行SQL语句"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">执行SQL语句</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建Statement"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">创建Statement</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用PreparedStatement"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">用PreparedStatement</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#处理和显示结果"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">处理和显示结果</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#释放资源"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">释放资源</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -225,14 +225,85 @@
             </figure>
 
 
-<p>担心凭借自己低分飘过的六级理解错，所以我谷歌翻译了一下：<br>|Modifier and Type |    Method and Description |<br>| ————-|  ———|<br>|boolean    |acceptsURL(String url)<br>| |检索驱动程序是否认为它可以打开与给定URL的连接<br>|Connection|    connect(String url, Properties info)<br>| |尝试建立到给定URL的数据库连接<br>|int    |getMajorVersion()<br>||检索驱动程序的主版本号。<br>|int|    getMinorVersion()<br>||获取驱动程序的次要版本号<br>|Logger    |getParentLogger()<br>||返回此驱动程序使用的所有Logger的父Logger。<br>|DriverPropertyInfo[]    |getPropertyInfo(String url, Properties info)<br>||获取有关此驱动程序可能的属性的信息。<br>|boolean|    jdbcCompliant()<br>||报告此驱动程序是否为正版JDBC Compliant™驱动程序</p>
+<p>担心凭借自己低分飘过的六级理解错，所以我谷歌翻译了一下  </p>
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>acceptsURL(String url)</td>
+</tr>
+<tr>
+<td></td>
+<td>检索驱动程序是否认为它可以打开与给定URL的连接</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>connect(String url, Properties info)</td>
+</tr>
+<tr>
+<td></td>
+<td>尝试建立到给定URL的数据库连接</td>
+</tr>
+<tr>
+<td>int</td>
+<td>getMajorVersion(</td>
+</tr>
+<tr>
+<td></td>
+<td>检索驱动程序的主版本号。</td>
+</tr>
+<tr>
+<td>int</td>
+<td>getMinorVersion()</td>
+</tr>
+<tr>
+<td></td>
+<td>获取驱动程序的次要版本号</td>
+</tr>
+<tr>
+<td>Logger</td>
+<td>getParentLogger()</td>
+</tr>
+<tr>
+<td></td>
+<td>返回此驱动程序使用的所有Logger的父Logger。</td>
+</tr>
+<tr>
+<td>DriverPropertyInfo[]</td>
+<td>getPropertyInfo(String url, Properties info)</td>
+</tr>
+<tr>
+<td></td>
+<td>获取有关此驱动程序可能的属性的信息。</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>jdbcCompliant()</td>
+</tr>
+<tr>
+<td></td>
+<td>报告此驱动程序是否为正版JDBC Compliant™驱动程序</td>
+</tr>
+</tbody></table>
 <p>通过jdbc驱动和数据库操作的主要过程如下：</p>
-<h2 id="加载驱动"><a href="#加载驱动" class="headerlink" title="加载驱动"></a>加载驱动</h2><p>首先要加载初始化驱动类，这个过程其实就是讲驱动类加载到我们的JVM里面。关于类加载过程可以到[到这里]看看(<a href="https://www.baidu.com/s?wd=类加载过程" target="_blank" rel="noopener">https://www.baidu.com/s?wd=类加载过程</a>)</p>
+<h2 id="加载驱动"><a href="#加载驱动" class="headerlink" title="加载驱动"></a>加载驱动</h2><p>首先要加载初始化驱动类，这个过程其实就是讲驱动类加载到我们的JVM里面。关于类加载过程可以到<a href="https://www.baidu.com/s?wd=类加载过程" target="_blank" rel="noopener">到这里</a>看看</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里以Mysql为例</span></span><br><span class="line">Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br></pre></td></tr></table></figure>
 
-<p>为什么其他类我直接就可以搞，人家会自动出发加载，这个为啥要手动呢？因为这个加载过程中其实是为了运行里面的静态代码块来对驱动进行初始化的，至于为什么这样我也不深入了，只知道不这样会抛异常，后续有空再康康。</p>
+<p>为什么其他类我直接就可以搞，人家会自动触发加载，这个为啥要手动呢？因为这个加载过程中其实是为了运行里面的静态代码块来对驱动进行初始化的，至于为什么这样我也不深入了，只知道不这样会抛异常，后续有空再瞅一下。</p>
 <h2 id="建立连接"><a href="#建立连接" class="headerlink" title="建立连接"></a>建立连接</h2><p>我们在上面已经了解过有个接口叫<code>connect(String url, Properties info)</code>可以帮助我们连接到指定url的数据库。</p>
-<h3 id="使用Driver直接建立连接"><a href="#使用Driver直接建立连接" class="headerlink" title="使用Driver直接建立连接"></a>使用Driver直接建立连接</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//1.加载oracle驱动类，并实例化 </span></span><br><span class="line">     Driver driver = (Driver) Class.forName(<span class="string">"oracle.jdbc.driver.OracleDriver"</span>).newInstance(); </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//2.创建真实的数据库连接： </span></span><br><span class="line">    String  url = <span class="string">"jdbc:oracle:thin:@127.0.0.1:1521:xe"</span>;       Properties props = <span class="keyword">new</span> Properties(); </span><br><span class="line">    props.put(<span class="string">"user"</span>, <span class="string">"louluan"</span>); </span><br><span class="line">    props.put(<span class="string">"password"</span>, <span class="string">"123456"</span>); </span><br><span class="line">    Connection connection = driver.connect(url, props);     </span><br><span class="line">```   </span><br><span class="line"></span><br><span class="line">在<span class="number">1</span>和<span class="number">2</span>之间我们也可以利用上面的测试接口，看看我们的url是否符合这个数据库的协议。然后再进行连接。</span><br><span class="line"></span><br><span class="line">在连接过程中也发现了一个问题，就是这个连接单个数据库的时候没问题，但是连接多个数据库的时候我们就得搞多个Driver了，很麻烦。  </span><br><span class="line"></span><br><span class="line">### DriverManager建立连接</span><br><span class="line"></span><br><span class="line">解决方式就是来个DriverManager，用来管理我们的Driver。这个东西挺厉害，所有的驱动类都被他管着，他也可以注册/注销Driver（这个细节可以看参考的第二篇博客），想怎么玩怎么玩，驱动类初期一加载初始化然后就会自动注册到DriverManager中让他管理。而且我们的某个数据库的Driver被注销了之后，重新通过DriverManger进行getDriver，就和没有进行初始化驱动类一个结果，抛异常。</span><br><span class="line"></span><br><span class="line">这个DriverManager有个静态方法getDriver，可以通过传过来的URL，返回可以打开URL的Driver。(这个过程其实是DriverManager通过遍历每一个Driver的acceptsURL(url)判断这个url是符合哪一个的。</span><br><span class="line"></span><br><span class="line">而为了更进一步的方便，有个getConnection</span><br><span class="line"></span><br><span class="line">``` java</span><br><span class="line">Driver driver  = DriverManager.getDriver(url); </span><br><span class="line">Connection connection = driver.connect(url, props);</span><br></pre></td></tr></table></figure>
+<h3 id="使用Driver直接建立连接"><a href="#使用Driver直接建立连接" class="headerlink" title="使用Driver直接建立连接"></a>使用Driver直接建立连接</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.加载oracle驱动类，并实例化 </span></span><br><span class="line"> Driver driver = (Driver) Class.forName(<span class="string">"oracle.jdbc.driver.OracleDriver"</span>).newInstance(); </span><br><span class="line"></span><br><span class="line"><span class="comment">//2.创建真实的数据库连接： </span></span><br><span class="line">String  url = <span class="string">"jdbc:oracle:thin:@127.0.0.1:1521:xe"</span>;       Properties props = <span class="keyword">new</span> Properties(); </span><br><span class="line">props.put(<span class="string">"user"</span>, <span class="string">"louluan"</span>); </span><br><span class="line">props.put(<span class="string">"password"</span>, <span class="string">"123456"</span>); </span><br><span class="line">Connection connection = driver.connect(url, props);</span><br></pre></td></tr></table></figure>
+
+<p>在1和2之间我们也可以利用上面的测试接口，看看我们的url是否符合这个数据库的协议。然后再进行连接。</p>
+<p>在连接过程中也发现了一个问题，就是这个连接单个数据库的时候没问题，但是连接多个数据库的时候我们就得搞多个Driver了，很麻烦。  </p>
+<h3 id="DriverManager建立连接"><a href="#DriverManager建立连接" class="headerlink" title="DriverManager建立连接"></a>DriverManager建立连接</h3><p>解决方式就是来个DriverManager，用来管理我们的Driver。这个东西挺厉害，所有的驱动类都被他管着，他也可以注册/注销Driver（这个细节可以看参考的第二篇博客），想怎么玩怎么玩，驱动类初期一加载初始化然后就会自动注册到DriverManager中让他管理。而且我们的某个数据库的Driver被注销了之后，重新通过DriverManger进行getDriver，就和没有进行初始化驱动类一个结果，抛异常。</p>
+<p>这个DriverManager有个静态方法getDriver，可以通过传过来的URL，返回可以打开URL的Driver。(这个过程其实是DriverManager通过遍历每一个Driver的acceptsURL(url)判断这个url是符合哪一个的。</p>
+<p>而为了更进一步的方便，有个getConnection</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Driver driver  = DriverManager.getDriver(url); </span><br><span class="line">Connection connection = driver.connect(url, props);</span><br></pre></td></tr></table></figure>
 <p>也等价于</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">"oracle.jdbc.driver.OracleDriver"</span>); </span><br><span class="line">Connection connection = DriverManager.getConnection(url, props);</span><br></pre></td></tr></table></figure>
 
@@ -242,7 +313,39 @@
 <p>这样，在DriverManager第一次使用的时候就会首先加载这个驱动类。<br>因为DriverManager会在第一次加载的时候执行静态代码块初始化这个管理类</p>
 <p>具体DriverManager的API可以看<a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">这里</a></p>
 <p>通常我们我们也用这种方式<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection c = DriverManager.getConnection(<span class="string">"jdbc:mysql://127.0.0.1:3306/exam?characterEncoding=UTF-8"</span>, <span class="string">"root"</span>, <span class="string">"admin"</span>);</span><br></pre></td></tr></table></figure></p>
-<h2 id="执行SQL语句"><a href="#执行SQL语句" class="headerlink" title="执行SQL语句"></a>执行SQL语句</h2><h3 id="创建Statement或者PreparedStatement接口"><a href="#创建Statement或者PreparedStatement接口" class="headerlink" title="创建Statement或者PreparedStatement接口"></a>创建Statement或者PreparedStatement接口</h3>
+<h2 id="执行SQL语句"><a href="#执行SQL语句" class="headerlink" title="执行SQL语句"></a>执行SQL语句</h2><h3 id="创建Statement"><a href="#创建Statement" class="headerlink" title="创建Statement"></a>创建Statement</h3><p>这东西是也是一个接口类来的，它里面有很多函数我们可以通过connection的<code>createStatement（）</code>函数来获得statement对象。</p>
+<p>Statement对象创建之后，可以执行SQL语句，完成对数据库的增删改查。其中，增删改只需要改变SQL语句的内容就能完成，然而查询略显复杂。</p>
+<p>大概是这样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Statement stat = conn.createStatement();</span><br><span class="line"><span class="comment">// 准备sql语句</span></span><br><span class="line"><span class="comment">// 注意： 字符串要用单引号'</span></span><br><span class="line">String sql = <span class="string">"insert into students values('小明'"</span>+<span class="string">","</span>+<span class="string">"'201616116')"</span>;</span><br><span class="line"><span class="comment">//在statement中使用字符串拼接的方式，这种方式存在诸多问题</span></span><br><span class="line">stat.execute(sql);</span><br></pre></td></tr></table></figure>
+
+<p>在Statement中使用字符串拼接的方式，这样有什么坏处呢？</p>
+<pre><code>1.SQL注入。
+举个栗子：一般我们执行这条语句，插入的名字和学号是变化的，我们传来的是“小明”还好，如果传了一个“小明........”后面接着其他的sql语句咋整，这个我们是没办法阻止的，人家传多少，我们执行多少。人家搞个删库的过来，哟吼，完蛋！
+
+2.复杂
+这么一搞，我每个sql都要这么玩，这么拼接，代码量也大，也不舒服。</code></pre><p>Statement在实际过程中使用的非常的少，所以一般我们都用这个PreparedStatement</p>
+<h3 id="用PreparedStatement"><a href="#用PreparedStatement" class="headerlink" title="用PreparedStatement"></a>用PreparedStatement</h3><p>不多说直接上代码看看：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="string">"insert into students  values(?,?)"</span>;</span><br><span class="line">PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement(sql);</span><br><span class="line">pstmt.setString(<span class="number">1</span>, name);</span><br><span class="line">pstmt.setInt(<span class="number">2</span>, Id);</span><br><span class="line">pstmt.executeUpdate();</span><br></pre></td></tr></table></figure>
+
+<p>诶，不一样了，对于同样的语句我们如果用preparedstatement，相对原有的statement好了很多。而且这里听说有个预编译机制，性能会快那么一两点。</p>
+<p>对于<code>insert</code>/<code>delete</code>/<code>update</code>都可以用<code>executeUpdate()</code>函数，返回int，表示有多少行受到了影响，而查询<code>select</code>则可以用<code>executeQuery()</code></p>
+<h2 id="处理和显示结果"><a href="#处理和显示结果" class="headerlink" title="处理和显示结果"></a>处理和显示结果</h2><p>接下来就是结果了，我们进行一波查询或者啥的总要返回结果给java这边吧，java这边有个ResultSet这个集合类可以让stat执行完sql语句后把结果返回给我们。</p>
+<p>ResultSet这东西其实是个借口来着，我们一般常用的就只有里面几个方法，比如我们要取某个表的学号，就直接<code>getInt(/*字段列数或者是字段名*/)</code>学号在里面是第一列，就写个1也可以，学号在里面叫ID，就直接填”ID”也行。如果要传出来的是String的，就用<code>getString()</code>。</p>
+<p>上代码看下。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ResultSet rs = s.executeQuery(sql);</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (rs.next())&#123;</span><br><span class="line">	<span class="keyword">int</span> Id = rs.getInt(<span class="string">"student_id"</span>);</span><br><span class="line">	String Name = rs.getString(<span class="string">"student_name"</span>);</span><br><span class="line">    <span class="comment">//一般我们在后面会把这些搞成对象，方便集中处理。（转json）....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="释放资源"><a href="#释放资源" class="headerlink" title="释放资源"></a>释放资源</h2><p>我们创建的连接，用完了要关闭吧！<br>我们创建的statement，这个也要关闭。<br>我们创建的resultset，这个也要关闭。</p>
+<p>这个时候我们就又要关闭他们了。当然我也尝试过不关闭，这可以跑，但是久而久之系统的可用资源慢慢下降整个后台性能就呵呵了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rs.close();</span><br><span class="line">pstmt.close();</span><br><span class="line">conn.close();</span><br><span class="line"><span class="comment">//直接调用close即可进行关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>实际在进行close的时候也要考虑是不是空连接（查询一个不存在的表的时候），通常的做法是放进<code>finally{...}</code>里面，这样最后执行，然后close之前加个if判空即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">finally</span> &#123;</span><br><span class="line"> <span class="keyword">if</span> (rs != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            rs.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123; <span class="comment">/* ignored */</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ps != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ps.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123; <span class="comment">/* ignored */</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            conn.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123; <span class="comment">/* ignored */</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果这些不可能是空指针，可以直接try，catch，或者直接用人家封装的玩意儿</span></span><br><span class="line"> <span class="keyword">finally</span> &#123;</span><br><span class="line">    DbUtils.closeQuietly(rs);</span><br><span class="line">    DbUtils.closeQuietly(ps);</span><br><span class="line">    DbUtils.closeQuietly(conn);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>差不多这样了，以上只是一些简单的执行过程，还有很多细节可以深入，数据库连接池，jdbctmplate等。在这里也mark一下，看下有空搞一搞。</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -250,7 +353,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-21T14:13:41.472Z" itemprop="dateUpdated">2019-11-21 22:13:41</time>
+    Last updated: <time datetime="2019-11-26T11:41:35.980Z" itemprop="dateUpdated">2019-11-26 19:41:35</time>
 </span><br>
 
 
