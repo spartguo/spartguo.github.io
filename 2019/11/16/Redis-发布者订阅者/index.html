@@ -29,13 +29,13 @@
 <meta property="og:site_name" content="禹哥小站">
 <meta property="og:description" content="引言本文参考了https:&#x2F;&#x2F;blog.csdn.net&#x2F;clh604&#x2F;article&#x2F;details&#x2F;19754939https:&#x2F;&#x2F;blog.csdn.net&#x2F;gududedabai&#x2F;article&#x2F;details&#x2F;80326129 简介 为了解耦发布者(publisher)和订阅者(subscriber)之间的关系，Redis 使用了 channel (频道)作为两者的中介 —— 发布者将信">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;redis-pubsub&#x2F;aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzAzMjky.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;redis-pubsub&#x2F;aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzE5NDc5.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;subscribe1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;publish1.png">
-<meta property="og:updated_time" content="2019-11-17T06:29:59.182Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;139.199.159.100&#x2F;blog_pictures&#x2F;redis-pubsub&#x2F;aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzAzMjky.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;139.199.159.100&#x2F;blog_pictures&#x2F;redis-pubsub&#x2F;aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzE5NDc5.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;139.199.159.100&#x2F;blog_pictures&#x2F;redis-pubsub&#x2F;subscribe1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;139.199.159.100&#x2F;blog_pictures&#x2F;redis-pubsub&#x2F;publish1.png">
+<meta property="og:updated_time" content="2019-12-09T06:18:13.604Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;q0p4k1fq1.bkt.clouddn.com&#x2F;image&#x2F;myblog&#x2F;redis-pubsub&#x2F;aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzAzMjky.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;139.199.159.100&#x2F;blog_pictures&#x2F;redis-pubsub&#x2F;aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzAzMjky.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="禹哥小站" href="/atom.xml">
     
@@ -204,27 +204,17 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://q0p4k1fq1.bkt.clouddn.com/image/myblog/redis-pubsub/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzAzMjky.jpg" alt="订阅" title="">
+                    <img src="http://139.199.159.100/blog_pictures/redis-pubsub/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzAzMjky.jpg" alt="订阅" title="">
                 </div>
                 <div class="image-caption">订阅</div>
             </figure>
 
-<p>发布者在相应频道发信息就好，完全不需要管谁订阅了，自动会发送到每个订阅者手中</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://q0p4k1fq1.bkt.clouddn.com/image/myblog/redis-pubsub/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzE5NDc5.jpg" alt="发布" title="">
-                </div>
-                <div class="image-caption">发布</div>
-            </figure>
-
-
-
+<p>发布者在相应频道发信息就好，完全不需要管谁订阅了，自动会发送到每个订阅者手中<br><img src="http://139.199.159.100/blog_pictures/redis-pubsub/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcxMjEyMTA1NzE5NDc5.jpg" alt="发布"></p>
 <h1 id="主要命令"><a href="#主要命令" class="headerlink" title="主要命令"></a>主要命令</h1><h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><p>开启一个客户端先进行订阅。然后在另一个客户端在相应频道发布消息，两个客户端内容如下图。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://q0p4k1fq1.bkt.clouddn.com/image/myblog/subscribe1.png" alt="订阅" title="">
+                    <img src="http://139.199.159.100/blog_pictures/redis-pubsub/subscribe1.png" alt="订阅" title="">
                 </div>
                 <div class="image-caption">订阅</div>
             </figure>
@@ -232,7 +222,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://q0p4k1fq1.bkt.clouddn.com/image/myblog/publish1.png" alt="发布消息" title="">
+                    <img src="http://139.199.159.100/blog_pictures/redis-pubsub/publish1.png" alt="发布消息" title="">
                 </div>
                 <div class="image-caption">发布消息</div>
             </figure>
@@ -298,7 +288,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-17T06:29:59.182Z" itemprop="dateUpdated">2019-11-17 14:29:59</time>
+    Last updated: <time datetime="2019-12-09T06:18:13.604Z" itemprop="dateUpdated">2019-12-09 14:18:13</time>
 </span><br>
 
 
