@@ -464,10 +464,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '怎么不看我了！';
+            document.title = '有空来啊！';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)Hi!你好!';
+            document.title = '(つェ⊂)大佬你好！';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);

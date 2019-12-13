@@ -31,8 +31,9 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;139.199.159.100&#x2F;blog_pictures&#x2F;nginx-%E9%85%8D%E7%BD%AE&#x2F;nginx-%E9%85%8D%E7%BD%AE4.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;139.199.159.100&#x2F;blog_pictures&#x2F;nginx-%E9%85%8D%E7%BD%AE&#x2F;nginx-%E9%85%8D%E7%BD%AE3.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;139.199.159.100&#x2F;blog_pictures&#x2F;nginx-%E9%85%8D%E7%BD%AE&#x2F;nginx2.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;139.199.159.100&#x2F;blog_pictures&#x2F;nginx-%E9%85%8D%E7%BD%AE&#x2F;nginx-%E9%85%8D%E7%BD%AE1.png">
-<meta property="og:updated_time" content="2019-12-09T02:29:26.973Z">
+<meta property="og:updated_time" content="2019-12-09T06:41:48.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;139.199.159.100&#x2F;blog_pictures&#x2F;nginx-%E9%85%8D%E7%BD%AE&#x2F;nginx-%E9%85%8D%E7%BD%AE4.png">
     
@@ -219,7 +220,7 @@
 
 <h2 id="关于停止"><a href="#关于停止" class="headerlink" title="关于停止"></a>关于停止</h2><ol>
 <li><p>正常停止或关闭Nginx</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -s quit</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s quit</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>快速停止或关闭Nginx</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
@@ -248,7 +249,7 @@
 <h3 id="痛苦根源"><a href="#痛苦根源" class="headerlink" title="痛苦根源"></a>痛苦根源</h3><p>一开始想着彻底卸载，直接调用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get --purge remove nginx</span><br></pre></td></tr></table></figure>
 
-<p>然后网上删各种文件夹。</p>
+<p>然后跟着部分网站说的删各种文件夹（这里主要还是没搜几个就草草上手了，以后还是要小心）</p>
 <p>然后再装回来，看起来非常方便，很舒胡。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install install nginx</span><br></pre></td></tr></table></figure>
 
@@ -260,7 +261,7 @@
 
 <p>更惨的是我删了重来，这个错误依然在</p>
 <p>服务也一直开不起来</p>
-<p>通过查阅资料主要是如下两个问题</p>
+<p>通过查阅资料这个错误主要是如下两个问题</p>
 <ol>
 <li>配置文件有问题</li>
 <li>已经启动nginx配置或者端口被占用</li>
@@ -269,11 +270,18 @@
 <p>而且安装完了之后因为我删去的/usr/sbin/下的nginx文件，我输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -v</span><br></pre></td></tr></table></figure>
 
-<p><img src="" alt=""></p>
-<p>上面提示我没有部分包，我也有点奇怪为啥重新安装没有把包重新安装了呢？</p>
-<p>因为有问题的时候瞎搞了很多步骤，时间比较紧，也就没有看到底出在哪，我的解决重点在怎么删干净，也没有截图，估计里面涉及到很多问题，导致现在部分东西没办法复现，所以后续再深入探讨。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://139.199.159.100/blog_pictures/nginx-%E9%85%8D%E7%BD%AE/nginx2.png" alt="nginx -v" title="">
+                </div>
+                <div class="image-caption">nginx -v</div>
+            </figure>
+
+<p>上面提示我没有部分包，这个时候我是已经执行了安装的，我也有点奇怪为啥重新安装没有把包重新安装了呢？</p>
 <p>对于上面的问题，我觉得这篇文章很有帮助</p>
 <p><a href="https://segmentfault.com/a/1190000014027697?utm_source=tag-newest" target="_blank" rel="noopener">记一次重装nginx时遇到的问题</a></p>
+<p>因为有问题的时候瞎搞了很多步骤，时间比较紧，也就没有看到底出在哪，我的解决重点在怎么删干净，也没有截图，估计里面涉及到很多问题，导致现在部分东西没办法复现，所以后续再深入探讨。所以我就只在下面写一下如何彻底删除。只要彻底删除搞好了，再来安装就不会有这个问题了。</p>
 <h3 id="彻底删除"><a href="#彻底删除" class="headerlink" title="彻底删除"></a>彻底删除</h3><p>经过一番查阅知道，原来彻底删除的正确姿势是这样的</p>
 <ol>
 <li><p>删除nginx，包含配置文件</p>
@@ -440,7 +448,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-09T02:29:26.973Z" itemprop="dateUpdated">2019-12-09 10:29:26</time>
+    Last updated: <time datetime="2019-12-09T06:41:48.864Z" itemprop="dateUpdated">2019-12-09 14:41:48</time>
 </span><br>
 
 
@@ -515,7 +523,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/09/%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%85%B1%E8%AF%86/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">区块链-共识</h4>
+      </a>
+    </div>
   
 
   
@@ -681,10 +696,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '怎么不看我了！';
+            document.title = '有空来啊！';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)Hi!你好!';
+            document.title = '(つェ⊂)大佬你好！';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
