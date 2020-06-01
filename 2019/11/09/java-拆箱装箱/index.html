@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>java-拆箱装箱 | 禹哥小站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JAVA,数据类型">
+    <meta name="description" content="前言本文转载于http:&#x2F;&#x2F;www.cnblogs.com&#x2F;dolphin0520&#x2F;p&#x2F;3780005.html并根据自己的理解方式做了表达上的修改  概念Java SE5之前，如果要生成一个数值为10的Integer对象，必须这样进行： 1Integer i = new Integer(10); 而在从Java SE5开始就提供了自动装箱的特性，如果要生成一个数值为10的Integer对象，只需">
+<meta name="keywords" content="JAVA,数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java-拆箱装箱">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;09&#x2F;java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1&#x2F;index.html">
+<meta property="og:site_name" content="禹哥小站">
+<meta property="og:description" content="前言本文转载于http:&#x2F;&#x2F;www.cnblogs.com&#x2F;dolphin0520&#x2F;p&#x2F;3780005.html并根据自己的理解方式做了表达上的修改  概念Java SE5之前，如果要生成一个数值为10的Integer对象，必须这样进行： 1Integer i = new Integer(10); 而在从Java SE5开始就提供了自动装箱的特性，如果要生成一个数值为10的Integer对象，只需">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-17T12:55:42.247Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="禹哥小站" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off" target="">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yuge.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">spartguo</h5>
+          <a href="mailto:172544714@qq.com" target="_blank" rel="noopener" title="172544714@qq.com" class="mail">172544714@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                总览
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/Categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/spartguo" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://119.3.213.209:8082" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-link"></i>
+                unclock-music
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">java-拆箱装箱</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back" target="">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search" target="">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare" target="">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">java-拆箱装箱</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-09T10:21:54.000Z" itemprop="datePublished" class="page-time">
+  2019-11-09
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#概念"><span class="post-toc-number">2.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实现原理"><span class="post-toc-number">3.</span> <span class="post-toc-text">实现原理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#源码解析"><span class="post-toc-number">4.</span> <span class="post-toc-text">源码解析</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-java-拆箱装箱"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">java-拆箱装箱</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-09 18:21:54" datetime="2019-11-09T10:21:54.000Z"  itemprop="datePublished">2019-11-09</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文转载于<br><a href="http://www.cnblogs.com/dolphin0520/p/3780005.html" target="_blank" rel="noopener">http://www.cnblogs.com/dolphin0520/p/3780005.html</a><br>并根据自己的理解方式做了表达上的修改</p>
+<hr>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>Java SE5之前，如果要生成一个数值为10的Integer对象，必须这样进行：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Integer i = <span class="keyword">new</span> Integer(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>而在从Java SE5开始就提供了自动装箱的特性，如果要生成一个数值为10的Integer对象，只需要这样就可以了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Integer i = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>这个过程中会自动根据数值创建对应的 Integer对象，这就是装箱。  </p>
+<p>而拆箱就是将包装器类型的转化为基本数据类型的一个过程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer i = <span class="number">10</span>;  <span class="comment">//装箱</span></span><br><span class="line"><span class="keyword">int</span> n = i;   <span class="comment">//拆箱</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><p><strong>Integer</strong>为例：  66<br>通过javap -c 对.java文件进行反编译得到.class文件<br>得到如下结果    </p>
+<ul>
+<li>在<strong>装箱</strong>的时候自动调用的是Integer的valueOf(int)方法</li>
+<li>在<strong>拆箱</strong>的时候自动调用的是Integer的intValue方法</li>
+</ul>
+<p>其他的数据类型也都是按照相似的方式拆箱装箱的</p>
+<h1 id="源码解析"><a href="#源码解析" class="headerlink" title="源码解析"></a>源码解析</h1>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-11-17T12:55:42.247Z" itemprop="dateUpdated">2019-11-17 20:55:42</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/yuge.jpg" alt="spartguo">
+            spartguo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/&title=《java-拆箱装箱》 — 禹哥小站&pic=http://yoursite.com/img/yuge.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/&title=《java-拆箱装箱》 — 禹哥小站&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《java-拆箱装箱》 — 禹哥小站&url=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle" target="">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/11/14/Redis-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Redis-常用命令</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/09/leetcode-%E6%9C%80%E5%A4%A7%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">leetcode-最大回文子串</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>spartguo &copy; 2019 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light" target= ""><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/&title=《java-拆箱装箱》 — 禹哥小站&pic=http://yoursite.com/img/yuge.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/&title=《java-拆箱装箱》 — 禹哥小站&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《java-拆箱装箱》 — 禹哥小站&url=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/11/09/java-%E6%8B%86%E7%AE%B1%E8%A3%85%E7%AE%B1/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '有空来啊！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)大佬你好！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
